@@ -18,7 +18,7 @@ export default defineConfig([
     },
 
     rules: {
-      // ✅ Import sorting: auto-fix only, never block commit
+      // Import sorting: auto-fix only, never block commit
       "simple-import-sort/imports": "off",
       "simple-import-sort/exports": "off",
 
@@ -30,7 +30,7 @@ export default defineConfig([
       //   { vars: "all", varsIgnorePattern: "^_", args: "after-used" }
       // ],
 
-      "no-console": "warn",
+      // "no-console": "warn",
       "prefer-const": "error",
       "eqeqeq": "error",
       "@typescript-eslint/no-explicit-any": "warn"
