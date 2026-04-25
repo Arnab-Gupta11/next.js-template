@@ -67,7 +67,7 @@ export const useAppMutation = <
 
     // onError এখন ৪ টি আর্গুমেন্ট নেয়
     onError: (err, variables, context, _mutationContext) => {
-      console.error('Mutation Error:', err);
+      console.log('Mutation Error:', err);
       if (options?.onError) {
         // কম্পোনেন্ট লেভেলের কলব্যাকেও ৪টি আর্গুমেন্ট পাস করতে হবে
         options.onError(err, variables, context, _mutationContext);

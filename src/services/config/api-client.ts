@@ -79,6 +79,7 @@ apiClient.interceptors.response.use(
         }
         return apiClient(originalRequest);
       } catch (refreshError) {
+        console.log('Token refresh failed:', refreshError);
         if (typeof window !== 'undefined') {
           window.dispatchEvent(new Event('session-expired'));
         }
