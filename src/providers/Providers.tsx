@@ -1,12 +1,15 @@
+import { getUserInfoFromCookie } from '@/server-actions/actions/auth/get-user-info';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Toaster } from 'sonner';
+import { AuthProvider } from './AuthProvider';
 import QueryProvider from './QueryProvider';
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+const Providers = async ({ children }: { children: React.ReactNode }) => {
+  const initialUser = await getUserInfoFromCookie();
   return (
     <>
       <QueryProvider>
-        {children}
+        <AuthProvider initialUser={initialUser}>{children}</AuthProvider>
         <Toaster position="top-center" richColors />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryProvider>
